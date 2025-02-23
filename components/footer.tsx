@@ -8,11 +8,16 @@ export default function Footer() {
     <footer className="fixed bottom-8 left-1/2 -translate-x-1/2">
       <div className="flex items-center gap-2">
         <Link href="https://github.com/zyx1121" target="_blank">
-          <Button variant="link" className="text-sm text-muted-foreground p-0">
-            Loki
+          <Button
+            variant="link"
+            className="font-elffont-rock text-sm text-muted-foreground p-0"
+          >
+            ㄓㄢㄩㄥˇㄒㄧㄤˊ
           </Button>
         </Link>
-        <span className="text-sm text-muted-foreground">2025</span>
+        <span className="font-elffont-rock text-sm text-muted-foreground">
+          ㄦˋㄌㄧㄥˊㄦˋㄨˇ
+        </span>
       </div>
     </footer>
   );
