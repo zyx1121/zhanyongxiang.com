@@ -4,6 +4,7 @@ import DraggableProvider from "@/components/dnd/provider";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Fira_Code } from "next/font/google";
@@ -54,6 +55,7 @@ export default function RootLayout({
             <Footer />
           </DraggableProvider>
         </ThemeProvider>
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>
