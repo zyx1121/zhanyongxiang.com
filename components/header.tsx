@@ -17,7 +17,7 @@ const links = [
     label: "PROJECT",
   },
   {
-    href: "/stack",
+    href: "https://stack.zhanyongxiang.com",
     label: "STACK",
   },
 ];
