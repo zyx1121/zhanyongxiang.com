@@ -3,10 +3,32 @@
 "use client";
 
 import { draggable } from "@/components/dnd";
+import { Badge } from "@/components/ui/badge";
+import { Cursors, init } from "@instantdb/react";
+
+const db = init({
+  appId: "ad6ce41f-5eb0-47c0-800c-93ac6f64301c",
+});
+
+const room = db.room("cursors", "1121");
+
+const userId = Math.random().toString(36).slice(2, 6);
 
 export default function Main() {
+  db.rooms.useSyncPresence(room, {
+    name: userId,
+  });
+
   return (
-    <main className="w-dvw h-dvh flex flex-col items-center justify-center text-center">
+    <Cursors
+      room={room}
+      renderCursor={(props) => (
+        <Badge variant="outline" className="bg-background/20 backdrop-blur-sm">
+          {props.presence.name}
+        </Badge>
+      )}
+      className="w-screen h-screen flex flex-col items-center justify-center overflow-hidden"
+    >
       <draggable.div id="0">Hi! I’m 詹詠翔 from Taiwan</draggable.div>
       <draggable.div id="1">but you can also call me Loki</draggable.div>
       <br />
@@ -21,6 +43,6 @@ export default function Main() {
       <draggable.div id="5">
         and also enjoy automation and building fun web apps with Next.js
       </draggable.div>
-    </main>
+    </Cursors>
   );
 }
