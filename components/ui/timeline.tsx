@@ -50,7 +50,7 @@ export function TimelineItem({
           <div className="w-px bg-muted-foreground mt-2 flex-1" />
         )}
       </div>
-      <div className="pb-8 pl-8">{children}</div>
+      <div className="pb-24 pl-8">{children}</div>
     </div>
   );
 }
