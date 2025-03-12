@@ -53,9 +53,9 @@ export default function Changelog() {
             <p
               className={`max-w-2xl break-words ${
                 index === changelog.length - 2
-                  ? "pb-[40dvh]"
+                  ? "pb-[30dvh]"
                   : index === 0
-                  ? "pb-[45dvh] pt-[-10rem]"
+                  ? "pb-[35dvh] pt-[-10rem]"
                   : ""
               }
               `}
