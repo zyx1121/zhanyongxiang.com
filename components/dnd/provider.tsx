@@ -3,7 +3,7 @@
 "use client";
 
 import { DragStoreProvider, useDragStore } from "@/components/dnd/context";
-import { DndContext, DragEndEvent } from "@dnd-kit/core";
+import { DndContext, DragEndEvent, DragStartEvent } from "@dnd-kit/core";
 import { ReactNode } from "react";
 
 function DraggableContextHandler({ children }: { children: ReactNode }) {
@@ -15,7 +15,7 @@ function DraggableContextHandler({ children }: { children: ReactNode }) {
     setActiveId(null);
   }
 
-  function handleDragStart(event: any) {
+  function handleDragStart(event: DragStartEvent) {
     const { active } = event;
     setActiveId(active.id.toString());
   }
