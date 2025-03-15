@@ -5,7 +5,7 @@
 import { useDragStore } from "@/components/dnd/context";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
-import React, { useEffect, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 
 interface DraggableDivProps extends React.HTMLAttributes<HTMLDivElement> {
   id: string;
@@ -87,7 +87,11 @@ export function DraggableDiv({
       ? `translate3d(${initialPosition.x}px, ${initialPosition.y}px, 0)`
       : `translate3d(${offset.x}px, ${offset.y}px, 0)`;
 
-  const combinedStyle = {
+  type ExtendedCSSProperties = CSSProperties & {
+    WebkitTouchCallout?: "none" | "default";
+  };
+
+  const combinedStyle: ExtendedCSSProperties = {
     ...style,
     cursor: "grab",
     transform: `${persistentTransform} ${dragTransform}`,
@@ -95,12 +99,22 @@ export function DraggableDiv({
     transition: isAnimating
       ? "none"
       : "transform 1s cubic-bezier(0.16, 1, 0.3, 1)",
+    touchAction: "none",
+    WebkitTouchCallout: "none",
+    WebkitUserSelect: "none",
+    userSelect: "none",
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault();
   };
 
   return (
     <div
       ref={setNodeRef}
       style={combinedStyle}
+      onTouchStart={handleTouchStart}
+      className="select-none touch-none"
       {...listeners}
       {...attributes}
       {...props}

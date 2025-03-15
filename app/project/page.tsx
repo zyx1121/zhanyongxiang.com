@@ -60,7 +60,7 @@ function ProjectCard({ project }: { project: Project }) {
       randomOffset={true}
       slideIn={true}
       id={project.title}
-      className="fixed max-w-lg w-8/10 md:w-lg h-auto select-none"
+      className="fixed max-w-lg w-8/10 md:w-lg h-auto"
     >
       <div className="w-full h-full rounded-lg p-4 border hover:border-primary/20 bg-background/20 backdrop-blur-sm transition-all duration-300 hover:scale-102">
         <div className="flex flex-row items-center justify-between w-full mb-2">
