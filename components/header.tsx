@@ -25,7 +25,7 @@ const links = [
 export default function Header() {
   return (
     <header className="fixed z-10 top-8 left-1/2 -translate-x-1/2">
-      <div className="flex items-center gap-8">
+      <div className="flex items-center gap-4 md:gap-8">
         {links.map((link) => (
           <Link key={link.href} href={link.href}>
             <Button

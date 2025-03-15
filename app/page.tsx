@@ -27,20 +27,26 @@ export default function Main() {
           {props.presence.name}
         </Badge>
       )}
-      className="w-screen h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="w-screen h-screen flex flex-col items-center justify-center overflow-hidden px-4 text-sm md:text-base"
     >
-      <draggable.div id="0">Hi! I’m 詹詠翔 from Taiwan</draggable.div>
-      <draggable.div id="1">but you can also call me Loki</draggable.div>
+      <draggable.div id="0" className="text-center max-w-full">
+        Hi! I’m 詹詠翔 from Taiwan
+      </draggable.div>
+      <draggable.div id="1" className="text-center max-w-full">
+        but you can also call me Loki
+      </draggable.div>
       <br />
-      <draggable.div id="2">I’m a university student at NTUST</draggable.div>
-      <draggable.div id="3">
+      <draggable.div id="2" className="text-center max-w-full">
+        I’m a university student at NTUST
+      </draggable.div>
+      <draggable.div id="3" className="text-center max-w-full">
         majoring in Electronic and Computer Engineering
       </draggable.div>
       <br />
-      <draggable.div id="4">
+      <draggable.div id="4" className="text-center max-w-full">
         I mainly work on network-related research
       </draggable.div>
-      <draggable.div id="5">
+      <draggable.div id="5" className="text-center max-w-full">
         and also enjoy automation and building fun web apps with Next.js
       </draggable.div>
     </Cursors>
