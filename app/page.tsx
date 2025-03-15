@@ -27,7 +27,7 @@ export default function Main() {
           {props.presence.name}
         </Badge>
       )}
-      className="w-screen h-screen flex flex-col items-center justify-center overflow-hidden px-4 text-sm md:text-base"
+      className="w-screen h-dvh flex flex-col items-center justify-center overflow-hidden px-4 text-sm md:text-base"
     >
       <draggable.div id="0" className="text-center max-w-full">
         Hi! I’m 詹詠翔 from Taiwan
