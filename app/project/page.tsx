@@ -13,31 +13,31 @@ const projects: Project[] = [
   {
     title: "Notepad",
     description: "",
-    image: "https://images.zhanyongxiang.com/project_notepad.webp",
+    image: "project_notepad.webp",
     link: "https://notepad.zhanyongxiang.com",
   },
   {
     title: "Meet",
     description: "",
-    image: "https://images.zhanyongxiang.com/project_meet.webp",
+    image: "  project_meet.webp",
     link: "https://meet.zhanyongxiang.com",
   },
   {
     title: "Minesweeper",
     description: "",
-    image: "https://images.zhanyongxiang.com/project_minesweeper.webp",
+    image: "project_minesweeper.webp",
     link: "https://minesweeper.zhanyongxiang.com",
   },
   {
     title: "Task",
     description: "",
-    image: "https://images.zhanyongxiang.com/project_task.webp",
+    image: "project_task.webp",
     link: "https://task.zhanyongxiang.com",
   },
   {
     title: "Jenkins Terminal",
     description: "",
-    image: "https://images.zhanyongxiang.com/project_jenkins_terminal.webp",
+    image: "project_jenkins_terminal.webp",
     link: "https://pypi.org/project/jenkins-terminal",
   },
   {
@@ -60,7 +60,7 @@ function ProjectCard({ project }: { project: Project }) {
       randomOffset={true}
       slideIn={true}
       id={project.title}
-      className="fixed max-w-lg w-8/10 md:w-lg h-auto"
+      className="fixed max-w-lg w-8/10 md:w-lg h-auto select-none"
     >
       <div className="w-full h-full rounded-lg p-4 border hover:border-primary/20 bg-background/20 backdrop-blur-sm transition-all duration-300 hover:scale-102">
         <div className="flex flex-row items-center justify-between w-full mb-2">
@@ -81,6 +81,9 @@ function ProjectCard({ project }: { project: Project }) {
             src={project.image}
             alt={project.title}
             className="rounded-lg object-cover"
+            draggable="false"
+            loading="eager"
+            fetchPriority="high"
           />
         )}
       </div>
